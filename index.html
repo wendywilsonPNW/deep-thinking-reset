@@ -41,13 +41,11 @@
   .view { display: none; }
   .view.active { display: block; }
 
-  /* summary */
   .summary-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; margin-bottom: 1rem; }
   .sum-chip { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.875rem 1rem; }
   .sum-val { font-size: 1.6rem; font-weight: 300; letter-spacing: -0.03em; line-height: 1; margin-bottom: 3px; }
   .sum-lbl { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.07em; color: var(--ink-soft); }
 
-  /* cards */
   .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 8px; }
   .card-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
   .card-title { font-size: 13px; font-weight: 600; letter-spacing: -0.01em; display: flex; align-items: center; gap: 7px; }
@@ -92,35 +90,31 @@
   .save-btn { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.02em; padding: 8px 20px; border-radius: 8px; border: 1px solid var(--border-mid); background: var(--ink); color: var(--bg); cursor: pointer; transition: opacity 0.15s; }
   .save-btn:hover { opacity: 0.85; }
 
-  /* ── DAILY UNLOCK CARD ── */
-  .unlock-card {
-    background: var(--ink);
-    border-radius: var(--radius);
-    padding: 1.25rem;
-    margin-bottom: 1rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .unlock-card::before {
-    content: '';
-    position: absolute;
-    top: 0; right: 0;
-    width: 120px; height: 120px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.03);
-    transform: translate(30px,-30px);
-  }
-  .unlock-day { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); margin-bottom: 6px; }
-  .unlock-phase { font-size: 11px; font-weight: 500; letter-spacing: 0.04em; margin-bottom: 8px; }
-  .unlock-text { font-size: 14px; font-weight: 300; line-height: 1.6; color: rgba(255,255,255,0.9); }
-  .unlock-locked { font-size: 13px; color: rgba(255,255,255,0.35); font-style: italic; font-weight: 300; }
+  /* unlock card */
+  .unlock-card { background: var(--ink); border-radius: var(--radius); padding: 1.375rem; margin-bottom: 1rem; position: relative; overflow: hidden; }
+  .unlock-card::before { content: ''; position: absolute; top: 0; right: 0; width: 140px; height: 140px; border-radius: 50%; background: rgba(255,255,255,0.025); transform: translate(40px,-40px); }
+  .unlock-day { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.35); margin-bottom: 5px; }
+  .unlock-phase { font-size: 11px; font-weight: 500; letter-spacing: 0.03em; color: rgba(255,255,255,0.45); margin-bottom: 12px; }
+  .unlock-body { font-size: 13px; font-weight: 300; line-height: 1.65; color: rgba(255,255,255,0.88); }
+  .unlock-quote { display: block; margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 12px; font-style: italic; color: rgba(255,255,255,0.5); line-height: 1.6; }
+  .unlock-attr { display: block; margin-top: 4px; font-size: 10px; font-style: normal; font-weight: 500; text-transform: uppercase; letter-spacing: 0.07em; color: rgba(255,255,255,0.3); }
 
-  /* ── PROGRESS VIEW ── */
+  /* progress view */
   .start-row { display: flex; align-items: center; gap: 10px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 8px; }
   .start-lbl { font-size: 12px; color: var(--ink-soft); flex: 1; }
   input[type="date"] { font-family: 'Inter', sans-serif; font-size: 12px; color: var(--ink); background: var(--bg); border: 1px solid var(--border-mid); border-radius: 6px; padding: 5px 8px; outline: none; }
 
-  /* capacity visual */
+  .goal-hero { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 8px; }
+  .goal-top { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 4px; }
+  .goal-title { font-size: 13px; font-weight: 600; }
+  .goal-pct { font-size: 1.8rem; font-weight: 300; letter-spacing: -0.04em; }
+  .goal-sub { font-size: 11px; color: var(--ink-soft); margin-bottom: 12px; }
+  .goal-bar-track { height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; margin-bottom: 8px; }
+  .goal-bar-fill { height: 100%; border-radius: 3px; background: var(--ink); transition: width 0.5s ease; }
+  .goal-detail { display: flex; justify-content: space-between; }
+  .goal-detail-item { font-size: 11px; color: var(--ink-soft); }
+  .goal-detail-item strong { color: var(--ink); font-weight: 600; }
+
   .capacity-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.375rem; margin-bottom: 8px; }
   .capacity-title { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
   .capacity-sub { font-size: 11px; color: var(--ink-soft); margin-bottom: 1.25rem; line-height: 1.5; }
@@ -134,16 +128,13 @@
   .cap-fill { height: 100%; border-radius: 3px; transition: width 0.6s ease; }
   .cap-pct { font-size: 11px; font-weight: 500; color: var(--ink-mid); min-width: 32px; text-align: right; }
 
-  /* phase milestones */
   .phases-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.375rem; margin-bottom: 8px; }
   .phases-title { font-size: 13px; font-weight: 600; margin-bottom: 1rem; }
   .phase-row { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
   .phase-row:last-child { border-bottom: none; padding-bottom: 0; }
   .phase-row:first-child { padding-top: 0; }
-  .phase-dot-col { display: flex; flex-direction: column; align-items: center; gap: 3px; padding-top: 2px; }
+  .phase-dot-col { padding-top: 2px; }
   .phase-dot { width: 10px; height: 10px; border-radius: 50%; border: 1.5px solid var(--border-mid); flex-shrink: 0; transition: all 0.3s; }
-  .phase-dot.active { border-color: transparent; }
-  .phase-dot.complete { border-color: transparent; }
   .phase-content { flex: 1; }
   .phase-days { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: var(--ink-faint); margin-bottom: 3px; }
   .phase-days.active { color: var(--ink-mid); }
@@ -151,19 +142,6 @@
   .phase-name.active, .phase-name.complete { color: var(--ink); }
   .phase-desc { font-size: 12px; color: var(--ink-faint); line-height: 1.5; }
   .phase-desc.active, .phase-desc.complete { color: var(--ink-soft); }
-  .phase-badge { font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 10px; margin-top: 4px; display: inline-block; }
-
-  /* goal hero */
-  .goal-hero { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 8px; }
-  .goal-top { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 4px; }
-  .goal-title { font-size: 13px; font-weight: 600; }
-  .goal-pct { font-size: 1.8rem; font-weight: 300; letter-spacing: -0.04em; }
-  .goal-sub { font-size: 11px; color: var(--ink-soft); margin-bottom: 12px; }
-  .goal-bar-track { height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; margin-bottom: 8px; }
-  .goal-bar-fill { height: 100%; border-radius: 3px; background: var(--ink); transition: width 0.5s ease; }
-  .goal-detail { display: flex; justify-content: space-between; }
-  .goal-detail-item { font-size: 11px; color: var(--ink-soft); }
-  .goal-detail-item strong { color: var(--ink); font-weight: 600; }
 
   .streak-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.125rem 1.25rem; margin-bottom: 8px; }
   .streak-row { display: flex; }
@@ -214,8 +192,7 @@
 
   <!-- TODAY -->
   <div class="view active" id="view-today">
-
-    <div id="unlockCard" style="margin-bottom:1rem"></div>
+    <div id="unlockCard" style="margin-bottom:0"></div>
 
     <div class="summary-row">
       <div class="sum-chip"><div class="sum-val" id="totalPages">0</div><div class="sum-lbl">pages</div></div>
@@ -224,10 +201,7 @@
     </div>
 
     <div class="card reading">
-      <div class="card-head">
-        <div class="card-title"><div class="title-bar"></div>Reading</div>
-        <div class="card-meta">30 pages · 3 books</div>
-      </div>
+      <div class="card-head"><div class="card-title"><div class="title-bar"></div>Reading</div><div class="card-meta">30 pages · 3 books</div></div>
       <div class="book-row"><span class="book-idx">01</span><input type="text" placeholder="book title" id="title-0"><div class="page-wrap"><button class="pg-btn" onclick="changePage(0,-10)">−</button><div><div class="pg-num" id="pages-0">0</div></div><button class="pg-btn" onclick="changePage(0,10)">+</button><div class="pg-goal">/ 30</div></div></div>
       <div class="book-row"><span class="book-idx">02</span><input type="text" placeholder="book title" id="title-1"><div class="page-wrap"><button class="pg-btn" onclick="changePage(1,-10)">−</button><div><div class="pg-num" id="pages-1">0</div></div><button class="pg-btn" onclick="changePage(1,10)">+</button><div class="pg-goal">/ 30</div></div></div>
       <div class="book-row"><span class="book-idx">03</span><input type="text" placeholder="book title" id="title-2"><div class="page-wrap"><button class="pg-btn" onclick="changePage(2,-10)">−</button><div><div class="pg-num" id="pages-2">0</div></div><button class="pg-btn" onclick="changePage(2,10)">+</button><div class="pg-goal">/ 30</div></div></div>
@@ -235,10 +209,7 @@
     </div>
 
     <div class="card movement">
-      <div class="card-head">
-        <div class="card-title"><div class="title-bar"></div>Movement</div>
-        <div class="card-meta">30 min goal</div>
-      </div>
+      <div class="card-head"><div class="card-title"><div class="title-bar"></div>Movement</div><div class="card-meta">30 min goal</div></div>
       <div class="activity-toggles">
         <button class="act-btn" id="act-weights" onclick="toggleActivity('weights')">Weightlifting</button>
         <button class="act-btn" id="act-peloton" onclick="toggleActivity('peloton')">Peloton</button>
@@ -256,10 +227,7 @@
     </div>
 
     <div class="card creative">
-      <div class="card-head">
-        <div class="card-title"><div class="title-bar"></div>Creative</div>
-        <div class="card-meta">30 min goal</div>
-      </div>
+      <div class="card-head"><div class="card-title"><div class="title-bar"></div>Creative</div><div class="card-meta">30 min goal</div></div>
       <div class="time-layout">
         <div class="note-side"><div class="note-lbl">what did you make?</div><input type="text" id="createNote" placeholder="cello, writing, drawing…"></div>
         <div class="time-side">
@@ -279,17 +247,13 @@
 
   <!-- PROGRESS -->
   <div class="view" id="view-progress">
-
     <div class="start-row">
       <div class="start-lbl">Challenge start date</div>
       <input type="date" id="startDate" onchange="onStartChange()">
     </div>
 
     <div class="goal-hero">
-      <div class="goal-top">
-        <div class="goal-title">30-day reset</div>
-        <div class="goal-pct" id="goalPct">0%</div>
-      </div>
+      <div class="goal-top"><div class="goal-title">30-day reset</div><div class="goal-pct" id="goalPct">0%</div></div>
       <div class="goal-sub" id="goalSub">Set a start date to begin tracking</div>
       <div class="goal-bar-track"><div class="goal-bar-fill" id="goalBar" style="width:0%"></div></div>
       <div class="goal-detail">
@@ -325,36 +289,36 @@
 
     <div class="phases-card">
       <div class="phases-title">Your phases</div>
-      <div class="phase-row" id="phase-row-1">
+      <div class="phase-row">
         <div class="phase-dot-col"><div class="phase-dot" id="phase-dot-1" style="background:var(--phase1)"></div></div>
         <div class="phase-content">
           <div class="phase-days" id="phase-days-1">Days 1–7</div>
           <div class="phase-name" id="phase-name-1">Recalibration</div>
-          <div class="phase-desc" id="phase-desc-1">Your dopamine system is resetting its baseline. This is the hardest stretch — the urge to reach for your phone is strongest here. Every day you log is your brain learning a new signal.</div>
+          <div class="phase-desc" id="phase-desc-1">Your dopamine system is resetting its baseline. The urge to reach for your phone is strongest here. Every day you log is your brain learning a new signal.</div>
         </div>
       </div>
-      <div class="phase-row" id="phase-row-2">
+      <div class="phase-row">
         <div class="phase-dot-col"><div class="phase-dot" id="phase-dot-2"></div></div>
         <div class="phase-content">
           <div class="phase-days" id="phase-days-2">Days 8–14</div>
           <div class="phase-name" id="phase-name-2">Attention Restores</div>
-          <div class="phase-desc" id="phase-desc-2">Sustained attention measurably improves in this window — equivalent to reversing roughly a decade of age-related decline, according to a 2023 RCT. You'll notice it's easier to stay with one thing.</div>
+          <div class="phase-desc" id="phase-desc-2">Sustained attention measurably improves — equivalent to reversing roughly a decade of age-related decline (2023 RCT). You'll notice it's easier to stay with one thing.</div>
         </div>
       </div>
-      <div class="phase-row" id="phase-row-3">
+      <div class="phase-row">
         <div class="phase-dot-col"><div class="phase-dot" id="phase-dot-3"></div></div>
         <div class="phase-content">
           <div class="phase-days" id="phase-days-3">Days 15–21</div>
           <div class="phase-name" id="phase-name-3">Deep Mode Returns</div>
-          <div class="phase-desc" id="phase-desc-3">Your default mode network — the brain's insight engine, responsible for creative connection-making and long-term memory consolidation — starts firing the way it's supposed to. The cello, the books, the ideas: this is when they start landing differently.</div>
+          <div class="phase-desc" id="phase-desc-3">Your default mode network — the brain's insight engine, responsible for creative connection-making and memory consolidation — starts firing the way it's supposed to.</div>
         </div>
       </div>
-      <div class="phase-row" id="phase-row-4">
+      <div class="phase-row">
         <div class="phase-dot-col"><div class="phase-dot" id="phase-dot-4"></div></div>
         <div class="phase-content">
           <div class="phase-days" id="phase-days-4">Days 22–30</div>
           <div class="phase-name" id="phase-name-4">Full Executive Function</div>
-          <div class="phase-desc" id="phase-desc-4">Strategic thinking, planning, impulse control, and decision quality all consolidate here. This is the version of your brain you've been trying to get back — the one that does your best work.</div>
+          <div class="phase-desc" id="phase-desc-4">Strategic thinking, planning, impulse control, and decision quality consolidate here. The version of your brain that does your best work.</div>
         </div>
       </div>
     </div>
@@ -381,59 +345,53 @@
       <div class="cum-row"><div class="cum-left"><div class="cum-dot" style="background:#D45B4A"></div>Peloton</div><div class="cum-right"><div class="cum-val" id="cumPeloton">0</div><div class="cum-goal-lbl">rides</div></div></div>
       <div class="cum-row"><div class="cum-left"><div class="cum-dot" style="background:var(--move)"></div>Walking</div><div class="cum-right"><div class="cum-val" id="cumWalk">0</div><div class="cum-goal-lbl">days</div></div></div>
     </div>
-
   </div>
 </main>
 
 <script>
 const DAYS = 30;
 
-const DAILY_UNLOCKS = {
-  1:  { phase: "Phase 1 · Recalibration", text: "Day one. Your brain has been optimized for quick hits — today you're choosing a different signal. That choice is the whole game." },
-  2:  { phase: "Phase 1 · Recalibration", text: "The urge to check your phone is dopamine talking. It'll be loudest this week. You don't have to fight it — just redirect it." },
-  3:  { phase: "Phase 1 · Recalibration", text: "Dopamine receptors are beginning to recalibrate their baseline. Boredom right now is your brain trying to find a new normal. Let it." },
-  4:  { phase: "Phase 1 · Recalibration", text: "Research shows the mere presence of a smartphone in the room consumes cognitive resources — even when you're not touching it. Distance is the intervention." },
-  5:  { phase: "Phase 1 · Recalibration", text: "Five days in. The hardest part of any reset is the middle of the first week. You're in it. Keep going." },
-  6:  { phase: "Phase 1 · Recalibration", text: "Your brain is learning that slow, deep engagement has its own reward. It just takes longer to feel it than a scroll does." },
-  7:  { phase: "Phase 1 · Recalibration", text: "One week. Your dopamine baseline has shifted. The worst of the recalibration is behind you." },
-  8:  { phase: "Phase 2 · Attention Restores", text: "You've crossed into Phase 2. Sustained attention is the first capacity to measurably return — you may already notice it's easier to stay with a single thing." },
-  9:  { phase: "Phase 2 · Attention Restores", text: "The reading is doing real work right now. Following a narrative for 30 pages exercises the exact attentional circuits your phone was degrading." },
-  10: { phase: "Phase 2 · Attention Restores", text: "Ten days. A 2023 randomized controlled trial found two weeks of reduced smartphone internet produced attention improvements equivalent to reversing 10 years of aging. You're almost there." },
-  11: { phase: "Phase 2 · Attention Restores", text: "Working memory — your brain's RAM — starts improving around this point. You'll notice it in how you hold ideas together while thinking through complex problems." },
-  12: { phase: "Phase 2 · Attention Restores", text: "The weightlifting and Peloton sessions are compounding the cognitive benefits. Exercise accelerates the neurological recalibration you're doing with the phone." },
-  13: { phase: "Phase 2 · Attention Restores", text: "Almost two weeks. The passive scroll loop fragments your attention into tiny pieces. You've been rebuilding yours into something longer and more capable." },
-  14: { phase: "Phase 2 · Attention Restores", text: "Two weeks. Sustained attention is measurably better than when you started. Your brain is running more of itself." },
-  15: { phase: "Phase 3 · Deep Mode Returns", text: "Phase 3. This is when it gets interesting. Your default mode network — the brain's insight engine — is coming back online." },
-  16: { phase: "Phase 3 · Deep Mode Returns", text: "The default mode network is responsible for creative connection-making, long-term memory consolidation, and the kind of thinking that solves hard problems in the shower. It requires genuine boredom to activate. You've been giving it that." },
-  17: { phase: "Phase 3 · Deep Mode Returns", text: "Notice anything different about the cello, the books, the ideas? Deep mode changes how things land. Insight isn't faster — it's deeper." },
-  18: { phase: "Phase 3 · Deep Mode Returns", text: "Creativity and strategic thinking run on the same circuits. The work you do at the intersection of design and AI leadership — this is the version of your brain that does it best." },
-  19: { phase: "Phase 3 · Deep Mode Returns", text: "Three weeks almost done. The scroll loop offers infinite novelty but zero depth. You've been trading up." },
-  20: { phase: "Phase 3 · Deep Mode Returns", text: "Twenty days. Most people never make it here. You're in the part of the reset where the new patterns start feeling like yours." },
-  21: { phase: "Phase 3 · Deep Mode Returns", text: "Three weeks. Deep mode is active. The ideas that come to you in stillness — the ones that don't come when you're scrolling — those are yours now." },
-  22: { phase: "Phase 4 · Executive Function", text: "Final phase. Executive function — planning, strategic judgment, impulse control, decision quality — consolidates in this last stretch." },
-  23: { phase: "Phase 4 · Executive Function", text: "The prefrontal cortex runs executive function. It's also the part of the brain most degraded by compulsive smartphone use. You've been giving it back its resources." },
-  24: { phase: "Phase 4 · Executive Function", text: "Notice how decisions feel different. Less reactive, more considered. That's executive function doing its job without the constant interrupt." },
-  25: { phase: "Phase 4 · Executive Function", text: "Twenty-five days. Five to go. The version of your brain that finishes this is meaningfully different from the one that started it." },
-  26: { phase: "Phase 4 · Executive Function", text: "Research links heavy passive screen use to declines in verbal memory and global cognition. You've been running the opposite experiment — active engagement, sustained attention, creative output. Every day." },
-  27: { phase: "Phase 4 · Executive Function", text: "Three days left. The habits you've built this month aren't just good behavior — they're the actual mechanism of a sharper brain." },
-  28: { phase: "Phase 4 · Executive Function", text: "Twenty-eight days. Your brain has spent a month reclaiming itself. Strategic thinking, creative capacity, sustained focus — all running fuller than when you started." },
-  29: { phase: "Phase 4 · Executive Function", text: "One more day after this. Whatever you decide about your phone going forward — you've demonstrated something important about what you're capable of choosing." },
-  30: { phase: "Phase 4 · Executive Function", text: "Thirty days. You did it. The research says your attention, memory, creativity, and executive function are all measurably better than day one. This is your brain. Keep it." }
+const UNLOCKS = {
+  1:  { phase: "Phase 1 · Recalibration", body: "Day one. You've decided your attention belongs to you again. That decision is the whole reset.", quote: "Who you are, what you think, feel, and do, what you love — is the sum of what you focus on.", attr: "Cal Newport" },
+  2:  { phase: "Phase 1 · Recalibration", body: "The urge to reach for your phone is dopamine talking — it's been rewired to expect constant novelty. You don't have to fight it. Just redirect it.", quote: "You become what you give your attention to. If you yourself don't choose what thoughts and images you expose yourself to, someone else will.", attr: "Epictetus" },
+  3:  { phase: "Phase 1 · Recalibration", body: "Dopamine receptors are beginning to recalibrate their baseline. The restlessness you feel right now is your brain looking for a new signal. Give it one.", quote: "Be careful lest this reading of many authors and books of every sort may tend to make you discursive and unsteady. You must linger among a limited number of master-thinkers, and digest their works.", attr: "Seneca" },
+  4:  { phase: "Phase 1 · Recalibration", body: "Research finding: the mere presence of a smartphone on your desk — not using it, just having it nearby — measurably reduces cognitive capacity. Distance is the intervention, not willpower.", quote: "Efforts to deepen your focus will struggle if you don't simultaneously wean your mind from a dependence on distraction.", attr: "Cal Newport, Deep Work" },
+  5:  { phase: "Phase 1 · Recalibration", body: "Five days in. The middle of the first week is statistically the hardest part of any behavioral reset. You're in it. The fact that you opened this today is the whole point.", quote: "Difficulties strengthen the mind, as labor does the body.", attr: "Seneca" },
+  6:  { phase: "Phase 1 · Recalibration", body: "Your brain is learning that slow, deep engagement has its own reward. It just takes longer to feel it than a scroll does. That delay is the point — it means the reward is real.", quote: "Human beings, it seems, are at their best when immersed deeply in something challenging.", attr: "Cal Newport, Deep Work" },
+  7:  { phase: "Phase 1 · Recalibration", body: "One week. Your dopamine baseline has shifted. The scroll loop offered infinite novelty and zero depth. You've been choosing depth instead.", quote: "Depth will become increasingly rare and therefore increasingly valuable.", attr: "Cal Newport, Deep Work" },
+  8:  { phase: "Phase 2 · Attention Restores", body: "You've crossed into Phase 2. Sustained attention is the first capacity to measurably return. You may already notice it's easier to stay with one thing for longer.", quote: "To learn hard things quickly, you must focus intensely without distraction. To learn, in other words, is an act of deep work.", attr: "Cal Newport, Deep Work" },
+  9:  { phase: "Phase 2 · Attention Restores", body: "The reading is doing real neurological work right now. Following a sustained narrative for 30 pages exercises the exact attentional circuits that constant scrolling was degrading.", quote: "Our brains construct our worldview based on what we pay attention to. If you focus on your life, you and your life become the thing you're building.", attr: "Cal Newport, citing Winifred Gallagher" },
+  10: { phase: "Phase 2 · Attention Restores", body: "Ten days. A 2023 randomized controlled trial found that two weeks of reduced smartphone internet produced attention improvements equivalent to reversing 10 years of age-related cognitive decline. You're almost there.", quote: "High-quality work produced = time spent × intensity of focus.", attr: "Cal Newport, Deep Work" },
+  11: { phase: "Phase 2 · Attention Restores", body: "Working memory — your brain's ability to hold and manipulate ideas simultaneously — starts recovering around now. You'll feel it in how you hold complex problems together while thinking them through.", quote: "Less mental clutter means more mental resources available for deep thinking.", attr: "Cal Newport" },
+  12: { phase: "Phase 2 · Attention Restores", body: "The weightlifting and Peloton are compounding the cognitive benefits. Exercise accelerates neurological recalibration. Your body and your brain are being rebuilt in parallel.", quote: "It is only ideas gained from walking that have any worth.", attr: "Nietzsche, quoted in Deep Work" },
+  13: { phase: "Phase 2 · Attention Restores", body: "The scroll loop fragmented your attention into hundreds of tiny pieces per day. You've been spending nearly two weeks rebuilding yours into something longer, more capable, more yours.", quote: "People experiencing attention residue after switching tasks are likely to demonstrate poor performance on that next task.", attr: "Sophie Leroy, attention research" },
+  14: { phase: "Phase 2 · Attention Restores", body: "Two weeks. Sustained attention is measurably better than when you started. This is not a feeling — it is a documented neurological change. You earned it.", quote: "The skillful management of attention is the sine qua non of the good life and the key to improving virtually every aspect of your experience.", attr: "Cal Newport, Deep Work" },
+  15: { phase: "Phase 3 · Deep Mode Returns", body: "Phase 3. This is when the reset gets interesting. Your default mode network — the brain's insight engine — is coming back online. This is where your best thinking lives.", quote: "Providing your conscious brain time to rest enables your unconscious mind to take a shift sorting through your most complex professional challenges.", attr: "Cal Newport, Deep Work" },
+  16: { phase: "Phase 3 · Deep Mode Returns", body: "The default mode network requires genuine boredom to activate. It's responsible for creative leaps, long-term memory consolidation, and insight. Scrolling suppresses it completely. You've been giving it space.", quote: "If every moment of potential boredom in your life is relieved with a quick glance at your smartphone, your brain has likely been rewired to a point where it's not ready for deep work.", attr: "Cal Newport, Deep Work" },
+  17: { phase: "Phase 3 · Deep Mode Returns", body: "Notice anything different about the cello, the books, the ideas? Deep mode changes how things land — not faster, but deeper. That's the return you came here for.", quote: "To build your working life around the experience of flow produced by deep work is a proven path to deep satisfaction.", attr: "Cal Newport, Deep Work" },
+  18: { phase: "Phase 3 · Deep Mode Returns", body: "Creativity and strategic thinking run on exactly the same circuits. The work you do at the intersection of design, AI, and leadership requires this version of your brain — the uninterrupted one.", quote: "Concentrate every minute on doing what's in front of you with precise and genuine seriousness. Free yourself from all other distractions.", attr: "Marcus Aurelius, Meditations" },
+  19: { phase: "Phase 3 · Deep Mode Returns", body: "Nineteen days. Research distinguishes passive screen use — scrolling — which degrades memory and global cognition, from active engagement — reading, making, moving — which builds it. You've been running the right experiment.", quote: "What we choose to focus on and what we choose to ignore plays in defining the quality of our life.", attr: "Cal Newport" },
+  20: { phase: "Phase 3 · Deep Mode Returns", body: "Twenty days. Most people never make it here. The new patterns are starting to feel like yours — not rules you're following, but the way you actually move through your day.", quote: "The key to developing a deep work habit is to add routines and rituals to your working life designed to minimize the amount of willpower necessary to transition into and maintain a state of unbroken concentration.", attr: "Cal Newport, Deep Work" },
+  21: { phase: "Phase 3 · Deep Mode Returns", body: "Three weeks. Deep mode is fully active. The ideas that come to you in stillness — the ones that never came while scrolling — those are yours now. They always were.", quote: "Be satisfied if you can live the rest of your life as your nature demands. Focus on that, and don't let anything distract you.", attr: "Marcus Aurelius, Meditations" },
+  22: { phase: "Phase 4 · Executive Function", body: "Final phase. Executive function — strategic judgment, planning, impulse control, decision quality — consolidates in this last stretch. This is the version of your brain that leads.", quote: "Clarity about what matters provides clarity about what does not.", attr: "Cal Newport" },
+  23: { phase: "Phase 4 · Executive Function", body: "The prefrontal cortex runs executive function. It's also the part of the brain most degraded by compulsive smartphone use. You've spent three weeks giving it back its resources.", quote: "Network tools are distracting us from work that requires unbroken concentration, while simultaneously degrading our capacity to remain focused. Humans are not wired to be constantly wired.", attr: "Cal Newport" },
+  24: { phase: "Phase 4 · Executive Function", body: "Notice how decisions feel different. Less reactive, more considered. That's not a mood — that's executive function running without constant interrupt.", quote: "When you work, work hard. When you're done, be done.", attr: "Cal Newport, Deep Work" },
+  25: { phase: "Phase 4 · Executive Function", body: "Twenty-five days. Five to go. The version of your brain finishing this challenge is meaningfully different from the one that started it. That's not motivational language. That's neuroscience.", quote: "Deep work is necessary to wring every last drop of value out of your current intellectual capacity.", attr: "Cal Newport, Deep Work" },
+  26: { phase: "Phase 4 · Executive Function", body: "Passive screen use is linked to declines in verbal memory and global cognition. Active engagement — reading, creating, moving — is linked to better outcomes in memory, executive function, and attention. You've been doing all three, every day.", quote: "If you don't produce, you won't thrive — no matter how skilled or talented you are.", attr: "Cal Newport" },
+  27: { phase: "Phase 4 · Executive Function", body: "Three days left. The habits you've built this month aren't just discipline — they are the actual biological mechanism of a sharper, deeper, more capable brain.", quote: "As long as you live, keep learning how to live.", attr: "Seneca" },
+  28: { phase: "Phase 4 · Executive Function", body: "Twenty-eight days. Sustained attention, working memory, creative thinking, executive function — all running fuller than when you started. This is what you came here for.", quote: "A deep life is a good life.", attr: "Cal Newport, Deep Work" },
+  29: { phase: "Phase 4 · Executive Function", body: "One more day after this. Whatever you decide about your phone going forward — you've demonstrated something important about what you're capable of choosing.", quote: "People who labor all their lives but have no purpose to direct every thought and impulse toward are wasting their time — even when hard at work.", attr: "Marcus Aurelius, Meditations" },
+  30: { phase: "Phase 4 · Executive Function", body: "Thirty days. You did it. Your attention, memory, creativity, and executive function are all measurably better than day one. This is your brain. Keep it.", quote: "If you can't learn, you can't thrive.", attr: "Cal Newport" }
 };
 
 const PHASES = [
-  { num: 1, days: "Days 1–7",   name: "Recalibration",       start: 1,  end: 7,  color: "--phase1" },
-  { num: 2, days: "Days 8–14",  name: "Attention Restores",  start: 8,  end: 14, color: "--phase2" },
-  { num: 3, days: "Days 15–21", name: "Deep Mode Returns",   start: 15, end: 21, color: "--phase3" },
-  { num: 4, days: "Days 22–30", name: "Full Executive Function", start: 22, end: 30, color: "--phase4" }
+  { num:1, start:1,  end:7,  color:"--phase1" },
+  { num:2, start:8,  end:14, color:"--phase2" },
+  { num:3, start:15, end:21, color:"--phase3" },
+  { num:4, start:22, end:30, color:"--phase4" }
 ];
 
-const state = {
-  pages:[0,0,0], titles:['','',''],
-  moveMins:0, createMins:0,
-  moveNote:'', createNote:'',
-  activities: { weights:false, peloton:false, walk:false }
-};
+const state = { pages:[0,0,0], titles:['','',''], moveMins:0, createMins:0, moveNote:'', createNote:'', activities:{weights:false,peloton:false,walk:false} };
 
 function todayKey() { return new Date().toISOString().slice(0,10); }
 
@@ -443,29 +401,25 @@ function setDate() {
 }
 
 function getDayNumber() {
-  const startKey = localStorage.getItem('reset:startDate');
-  if (!startKey) return null;
-  const startD = new Date(startKey+'T00:00:00');
-  const todayD = new Date(todayKey()+'T00:00:00');
-  const n = Math.floor((todayD - startD) / 86400000) + 1;
+  const sk = localStorage.getItem('reset:startDate');
+  if (!sk) return null;
+  const n = Math.floor((new Date(todayKey()+'T00:00:00') - new Date(sk+'T00:00:00')) / 86400000) + 1;
   return (n >= 1 && n <= 30) ? n : null;
 }
 
 function renderUnlockCard() {
-  const container = document.getElementById('unlockCard');
-  const dayNum = getDayNumber();
-  if (!dayNum) return;
-
-  const unlock = DAILY_UNLOCKS[dayNum];
-  if (!unlock) return;
-
-  container.innerHTML = `
-    <div class="unlock-card">
-      <div class="unlock-day">Day ${dayNum} of 30</div>
-      <div class="unlock-phase" style="color:rgba(255,255,255,0.55)">${unlock.phase}</div>
-      <div class="unlock-text">${unlock.text}</div>
-    </div>
-  `;
+  const el = document.getElementById('unlockCard');
+  const n = getDayNumber();
+  if (!n) { el.innerHTML = ''; el.style.marginBottom = '0'; return; }
+  const u = UNLOCKS[n];
+  if (!u) return;
+  el.style.marginBottom = '1rem';
+  el.innerHTML = `<div class="unlock-card">
+    <div class="unlock-day">Day ${n} of 30</div>
+    <div class="unlock-phase">${u.phase}</div>
+    <div class="unlock-body">${u.body}</div>
+    <span class="unlock-quote">"${u.quote}"<span class="unlock-attr">— ${u.attr}</span></span>
+  </div>`;
 }
 
 function switchTab(tab, el) {
@@ -525,23 +479,21 @@ function onStartChange() {
 }
 
 function getAllEntries() {
-  const entries = {};
-  for (let i = 0; i < localStorage.length; i++) {
+  const e = {};
+  for (let i=0; i<localStorage.length; i++) {
     const k = localStorage.key(i);
     if (k && k.startsWith('reset:') && k !== 'reset:startDate') {
-      try { entries[k.replace('reset:','')] = JSON.parse(localStorage.getItem(k)); } catch(e) {}
+      try { e[k.replace('reset:','')] = JSON.parse(localStorage.getItem(k)); } catch(x) {}
     }
   }
-  return entries;
+  return e;
 }
 
-function computeStreaks(startKey) {
-  const entries = getAllEntries();
-  const today = todayKey();
-  let current=0, longest=0, run=0, daysLogged=0, daysElapsed=0;
-  if (!startKey) return {current,longest,daysLogged,daysElapsed};
-  const startD = new Date(startKey+'T00:00:00');
-  const todayD = new Date(today+'T00:00:00');
+function computeStreaks(sk) {
+  const entries = getAllEntries(), today = todayKey();
+  let current=0,longest=0,run=0,daysLogged=0,daysElapsed=0;
+  if (!sk) return {current,longest,daysLogged,daysElapsed};
+  const startD = new Date(sk+'T00:00:00'), todayD = new Date(today+'T00:00:00');
   daysElapsed = Math.max(0, Math.min(DAYS, Math.floor((todayD-startD)/86400000)+1));
   for (let i=0; i<daysElapsed; i++) {
     const d = new Date(startD); d.setDate(startD.getDate()+i);
@@ -551,30 +503,21 @@ function computeStreaks(startKey) {
   run=0;
   for (let i=daysElapsed-1; i>=0; i--) {
     const d = new Date(startD); d.setDate(startD.getDate()+i);
-    const k = d.toISOString().slice(0,10);
-    if (entries[k]) run++; else break;
+    if (entries[d.toISOString().slice(0,10)]) run++; else break;
   }
-  return {current:run, longest, daysLogged, daysElapsed};
+  return {current:run,longest,daysLogged,daysElapsed};
 }
 
 function renderProgress() {
-  const startKey = localStorage.getItem('reset:startDate');
-  if (startKey) document.getElementById('startDate').value = startKey;
-
-  const entries = getAllEntries();
-  const today = todayKey();
-  let cumPages=0, cumMove=0, cumCreate=0, cumWeights=0, cumPeloton=0, cumWalk=0;
+  const sk = localStorage.getItem('reset:startDate');
+  if (sk) document.getElementById('startDate').value = sk;
+  const entries = getAllEntries(), today = todayKey();
+  let cumPages=0,cumMove=0,cumCreate=0,cumWeights=0,cumPeloton=0,cumWalk=0;
   Object.values(entries).forEach(e => {
     if (e.pages) cumPages += e.pages.reduce((a,b)=>a+b,0);
-    cumMove += (e.moveMins||0);
-    cumCreate += (e.createMins||0);
-    if (e.activities) {
-      if (e.activities.weights) cumWeights++;
-      if (e.activities.peloton) cumPeloton++;
-      if (e.activities.walk) cumWalk++;
-    }
+    cumMove += (e.moveMins||0); cumCreate += (e.createMins||0);
+    if (e.activities) { if(e.activities.weights) cumWeights++; if(e.activities.peloton) cumPeloton++; if(e.activities.walk) cumWalk++; }
   });
-
   document.getElementById('cumPages').textContent = cumPages.toLocaleString();
   document.getElementById('cumMove').textContent = cumMove.toLocaleString();
   document.getElementById('cumCreate').textContent = cumCreate.toLocaleString();
@@ -585,19 +528,17 @@ function renderProgress() {
   document.getElementById('bar-move').style.width = Math.min(100,Math.round(cumMove/900*100)) + '%';
   document.getElementById('bar-create').style.width = Math.min(100,Math.round(cumCreate/900*100)) + '%';
 
-  const {current,longest,daysLogged,daysElapsed} = computeStreaks(startKey);
+  const {current,longest,daysLogged,daysElapsed} = computeStreaks(sk);
   document.getElementById('currentStreak').textContent = current;
   document.getElementById('longestStreak').textContent = longest;
   document.getElementById('daysLogged').textContent = daysLogged;
   document.getElementById('daysElapsed').textContent = daysElapsed || '—';
 
   let daysIn = 0;
-  if (startKey) {
-    const startD = new Date(startKey+'T00:00:00');
-    const todayD = new Date(today+'T00:00:00');
+  if (sk) {
+    const startD = new Date(sk+'T00:00:00'), todayD = new Date(today+'T00:00:00');
     daysIn = Math.max(0, Math.min(DAYS, Math.floor((todayD-startD)/86400000)+1));
-    const daysLeft = Math.max(0, DAYS-daysIn);
-    const pct = Math.round(daysIn/DAYS*100);
+    const daysLeft = Math.max(0, DAYS-daysIn), pct = Math.round(daysIn/DAYS*100);
     const endD = new Date(startD); endD.setDate(startD.getDate()+DAYS-1);
     document.getElementById('goalPct').textContent = pct + '%';
     document.getElementById('goalBar').style.width = pct + '%';
@@ -606,50 +547,34 @@ function renderProgress() {
     document.getElementById('daysLeft').textContent = daysLeft;
   }
 
-  // capacity bars — each unlocks progressively within its window
-  const capDefs = [
-    { id: 'attention', start: 1, end: 7 },
-    { id: 'memory',    start: 8, end: 14 },
-    { id: 'creative',  start: 15, end: 21 },
-    { id: 'executive', start: 22, end: 30 }
-  ];
-  capDefs.forEach(cap => {
-    const fill = document.getElementById('cap-'+cap.id);
-    const pctEl = document.getElementById('cap-'+cap.id+'-pct');
-    if (daysIn < cap.start) {
-      fill.style.width = '0%'; pctEl.textContent = '—';
-    } else if (daysIn >= cap.end) {
-      fill.style.width = '100%'; pctEl.textContent = '100%';
-    } else {
-      const p = Math.round((daysIn - cap.start + 1) / (cap.end - cap.start + 1) * 100);
-      fill.style.width = p + '%'; pctEl.textContent = p + '%';
-    }
+  [['attention',1,7],['memory',8,14],['creative',15,21],['executive',22,30]].forEach(([id,s,e]) => {
+    const fill = document.getElementById('cap-'+id), pctEl = document.getElementById('cap-'+id+'-pct');
+    if (daysIn < s) { fill.style.width='0%'; pctEl.textContent='—'; }
+    else if (daysIn >= e) { fill.style.width='100%'; pctEl.textContent='100%'; }
+    else { const p=Math.round((daysIn-s+1)/(e-s+1)*100); fill.style.width=p+'%'; pctEl.textContent=p+'%'; }
   });
 
-  // phase states
   PHASES.forEach(ph => {
     const dot = document.getElementById('phase-dot-'+ph.num);
     const daysEl = document.getElementById('phase-days-'+ph.num);
     const nameEl = document.getElementById('phase-name-'+ph.num);
     const descEl = document.getElementById('phase-desc-'+ph.num);
     const color = getComputedStyle(document.documentElement).getPropertyValue(ph.color).trim();
-
     if (daysIn >= ph.end) {
-      dot.style.background = color; dot.classList.add('complete');
+      dot.style.background=color; dot.style.borderColor='transparent';
       daysEl.classList.add('active'); nameEl.classList.add('complete'); descEl.classList.add('complete');
     } else if (daysIn >= ph.start) {
-      dot.style.background = color; dot.classList.add('active');
+      dot.style.background=color; dot.style.borderColor='transparent';
       daysEl.classList.add('active'); nameEl.classList.add('active'); descEl.classList.add('active');
     } else {
-      dot.style.background = ''; dot.style.borderColor = '';
+      dot.style.background=''; dot.style.borderColor='';
       daysEl.classList.remove('active'); nameEl.classList.remove('active','complete'); descEl.classList.remove('active','complete');
     }
   });
 
-  // dot grid
   const grid = document.getElementById('dotGrid');
   grid.innerHTML = '';
-  const startD = startKey ? new Date(startKey+'T00:00:00') : null;
+  const startD = sk ? new Date(sk+'T00:00:00') : null;
   for (let i=0; i<DAYS; i++) {
     const dot = document.createElement('div');
     if (!startD) { dot.className='dot'; }
@@ -679,12 +604,10 @@ function loadToday() {
   document.getElementById('prog-create').style.width=Math.min(100,Math.round(state.createMins/30*100))+'%';
   if (s.moveNote) document.getElementById('moveNote').value=s.moveNote;
   if (s.createNote) document.getElementById('createNote').value=s.createNote;
-  if (s.activities) {
-    ['weights','peloton','walk'].forEach(k => {
-      state.activities[k]=s.activities[k]||false;
-      document.getElementById('act-'+k).classList.toggle('selected',state.activities[k]);
-    });
-  }
+  if (s.activities) ['weights','peloton','walk'].forEach(k => {
+    state.activities[k]=s.activities[k]||false;
+    document.getElementById('act-'+k).classList.toggle('selected',state.activities[k]);
+  });
   updateSummary();
 }
 
